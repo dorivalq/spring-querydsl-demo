@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface CustomerCustomRepository{
     List<Customer> findByLastName(String lastName);
+
+    public List<Customer> findPersonsByFirstnameQuerydsl(String firstname);
 }

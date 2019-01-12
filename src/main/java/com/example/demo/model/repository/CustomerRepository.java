@@ -9,6 +9,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 @Primary
-public interface CustomerRepository extends JpaRepository<Customer, Long>, QuerydslPredicateExecutor<Customer> /*,CustomerCustomRepository*/{
+public interface CustomerRepository extends JpaRepository<Customer, Long>, QuerydslPredicateExecutor<Customer> ,CustomerCustomRepository{
 
 }

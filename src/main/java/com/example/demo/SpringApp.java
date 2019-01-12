@@ -56,4 +56,14 @@ public class SpringApp {
             log.info("");
         };
     }
+
+    @Bean
+    public CommandLineRunner go() {
+        return new CommandLineRunner() {
+            @Override
+            public void run(String... args) throws Exception {
+                System.out.println("Command line args = " + args);
+            }
+        };
+    }
 }
