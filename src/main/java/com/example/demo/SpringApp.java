@@ -45,12 +45,12 @@ public class SpringApp {
                     });
 
             // fetch customers by last name
-//            log.info("Customer found with findByLastName('Bauer'):");
+//            log.info("Customer found with findByLastNameDsl('Bauer'):");
 //            log.info("--------------------------------------------");
-//            repository.findByLastName("Bauer").forEach(bauer -> {
+//            repository.findByLastNameDsl("Bauer").forEach(bauer -> {
 //                log.info(bauer.toString());
 //            });
-            // for (Customer bauer : repository.findByLastName("Bauer")) {
+            // for (Customer bauer : repository.findByLastNameDsl("Bauer")) {
             // 	log.info(bauer.toString());
             // }
             log.info("");

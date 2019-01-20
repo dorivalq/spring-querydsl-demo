@@ -5,7 +5,7 @@ import com.example.demo.model.Customer;
 import java.util.List;
 
 public interface CustomerCustomRepository{
-    List<Customer> findByLastName(String lastName);
+    List<Customer> findByLastNameDsl(String lastName);
 
     public List<Customer> findPersonsByFirstnameQuerydsl(String firstname);
 }

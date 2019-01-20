@@ -4,6 +4,7 @@ import com.example.demo.model.Customer;
 import com.example.demo.model.QCustomer;
 import com.example.demo.model.repository.CustomerCustomRepository;
 import com.querydsl.jpa.impl.JPAQuery;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -13,23 +14,26 @@ public class CustomerRepositoryImpl implements CustomerCustomRepository {
     @PersistenceContext
     EntityManager em;
 
-    public List<Customer> find() {
+    public List<Customer> findDsl() {
         System.out.println();
-        return null;
+        throw new NotImplementedException();
     }
 
-    public List<Customer> findByLastName(String lastName) {
+    public List<Customer> findByLastNameDsl(String lastName) {
         System.out.println("lastName = " + lastName);
-
-        return null;
+        throw new NotImplementedException();
     }
 
     public List<Customer> findPersonsByFirstnameQuerydsl(String firstname) {
-        JPAQuery query = new JPAQuery(em);
+
+        JPAQuery<Customer> query = new JPAQuery<Customer>(em);
         QCustomer person = QCustomer.customer;
         query
+
                 .from(person)
-                .where(person.firstName.eq(firstname));
+                .where(person.firstName.eq(firstname))
+                .orderBy(person.firstName.asc())
+        ;
 
         return query.fetch();
     }
